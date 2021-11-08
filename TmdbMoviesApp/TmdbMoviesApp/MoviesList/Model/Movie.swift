@@ -6,11 +6,17 @@
 //
 
 import Foundation
-import UIKit
 
 struct Movie: Codable {
-    let image: UIImage
+    let image: String
     let title: String
-    let descriptio: String
+    let description: String
     let voteAverage: Double
+
+    enum CodingKeys: String, CodingKey {
+        case image = "poster_path"
+        case title
+        case description = "overview"
+        case voteAverage = "vote_average"
+    }
 }
