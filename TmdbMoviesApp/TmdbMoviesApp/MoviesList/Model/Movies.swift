@@ -8,7 +8,7 @@
 import Foundation
 
 struct Movies {
-    let movies: [Movies]
+    let movies: [Movie]
 
     enum CodingKeys: String, CodingKey {
         case movies = "results"
