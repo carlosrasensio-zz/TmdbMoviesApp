@@ -12,13 +12,13 @@ struct Constants {
     static let apiKey = "5d8bb741e4498fd5448bc0738a12eb52"
 
     struct URL {
-        static let base = "https://api.themoviedb.org/\(Constants.version)"
+        static let base = "https://api.themoviedb.org/\(Constants.version)/"
+        static let image = "hhtps://image.tmdb.org/t/p/w200"
     }
 
     struct Endpoint {
         static let apiKey = "?api_key=\(Constants.apiKey)"
         static let searchMovies = "search/movie"
-        static let getImages = "/movie/{movie_id}/images"
     }
 
     struct Optional {
