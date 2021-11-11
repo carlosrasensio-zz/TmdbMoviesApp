@@ -16,3 +16,5 @@
 - Add other kind of lists from servicem, like 'Top Rated' or 'Uncoming'.
 - Create our custom lists, selecting our favourite movies.
 - Improve the app UI/UX.
+- Add more languages for the app.
+- Use the Optionals struct in the Constants file to create a URL for making a more refined search.
