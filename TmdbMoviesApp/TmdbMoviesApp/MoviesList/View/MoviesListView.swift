@@ -12,8 +12,8 @@ import RxCocoa
 class MoviesListView: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables
     private var router = MoviesListRouter()
@@ -66,7 +66,7 @@ class MoviesListView: UIViewController {
             .distinctUntilChanged()
             .subscribe { result in
                 self.filteredMovies = self.movies.filter({ movie in
-                    self.reloadTableView() 
+                    self.reloadTableView()
                     return movie.title.contains(result)
                 })
             } onError: { error in
