@@ -8,6 +8,12 @@
 import UIKit
 
 class MovieCustomCell: UITableViewCell {
+    // MARK: - Outlets
+    @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var voteAverageLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
