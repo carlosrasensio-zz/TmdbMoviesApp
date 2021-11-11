@@ -9,9 +9,9 @@ import Foundation
 import RxSwift
 
 class NetworkManager {
-    func getMovies() -> Observable<Movies>  {
+    func getMovies() -> Observable<[Movie]>  {
         return Observable.create { observer -> Disposable in
-            let url = URL(string: Constants.URL.base + Constants.Endpoint.apiKey + Constants.Endpoint.searchMovies)!
+            let url = URL(string: Constants.NetworkManager.URLs.base  + Constants.NetworkManager.Endpoints.popularMovies + Constants.NetworkManager.Endpoints.apiKey)!
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
             request.addValue("application/json", forHTTPHeaderField: "Content-type")
@@ -21,9 +21,9 @@ class NetworkManager {
                 if response.statusCode == 200 {
                     do {
                         let decoder = JSONDecoder()
-                        let movies = try decoder.decode(Movies.self, from: data)
+                        let searchedMovies = try decoder.decode(Movies.self, from: data)
 
-                        observer.onNext(movies)
+                        observer.onNext(searchedMovies.movies)
                     } catch let error {
                         print("\n[X] Error: \(error.localizedDescription)\n")
                     }
