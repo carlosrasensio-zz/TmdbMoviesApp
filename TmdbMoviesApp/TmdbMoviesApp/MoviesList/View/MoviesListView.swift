@@ -69,6 +69,8 @@ extension MoviesListView: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = movies[indexPath.row].title
         cell.descriptionLabel.text = movies[indexPath.row].description
         cell.voteAverageLabel.text = "Vote average: \(movies[indexPath.row].voteAverage)"
+        let imageUrl = Constants.NetworkManager.URLs.image + movies[indexPath.row].image
+        cell.movieImageView.getImageFromURL(urlString: imageUrl)
 
         return cell
     }

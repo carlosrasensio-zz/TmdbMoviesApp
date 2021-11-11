@@ -8,13 +8,15 @@
 import Foundation
 
 struct Constants {
+    static let appName = "TMDB Movies App"
+    
     struct NetworkManager {
         static let version = 3
         static let apiKey = "5d8bb741e4498fd5448bc0738a12eb52"
 
         struct URLs {
             static let base = "https://api.themoviedb.org/\(Constants.NetworkManager.version)/"
-            static let image = "hhtps://image.tmdb.org/t/p/w200"
+            static let image = "https://image.tmdb.org/t/p/w200"
         }
 
         struct Endpoints {
