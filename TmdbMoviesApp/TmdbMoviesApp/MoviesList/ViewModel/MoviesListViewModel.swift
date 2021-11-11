@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class MoviesListViewModel {
-    // MARK: - Variables/Constants
+    // MARK: - Variables
     private weak var view: MoviesListView?
     private var router: MoviesListRouter?
     private var networkManager = NetworkManager()
