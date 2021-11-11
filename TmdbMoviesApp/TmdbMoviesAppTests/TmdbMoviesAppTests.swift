@@ -26,5 +26,4 @@ class TmdbMoviesAppTests: XCTestCase {
         let movies = networkManager.getMovies()
         XCTAssertNotNil(movies)
     }
-
 }
