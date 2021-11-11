@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 
 class MoviesListView: UIViewController {
-
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
@@ -139,6 +138,14 @@ extension MoviesListView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            viewModel.createMovieDetailView(movie: filteredMovies[indexPath.row])
+        } else {
+            viewModel.createMovieDetailView(movie: movies[indexPath.row])
+        }
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class MoviesListRouter {
-    // MARK: - MoviesList view creation
+    // MARK: - Variables
     private var sourceView: UIViewController?
     var viewController: UIViewController {
         createMoviesListViewController()
@@ -25,5 +25,10 @@ class MoviesListRouter {
     func setSourceView(_  sourceView: UIViewController?) {
         guard let view = sourceView else { return }
         self.sourceView = view
+    }
+
+    func navigateToMovieDetail(movie: Movie) {
+        let movieDetailView = MovieDetailRouter(movie: movie).viewController
+        sourceView?.navigationController?.pushViewController(movieDetailView, animated: true)
     }
 }

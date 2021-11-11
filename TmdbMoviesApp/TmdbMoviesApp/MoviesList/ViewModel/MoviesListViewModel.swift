@@ -25,4 +25,9 @@ class MoviesListViewModel {
     func getMovies() -> Observable<[Movie]> {
         return networkManager.getMovies()
     }
+
+    // MARK: - Navigate to MovieDetailView
+    func createMovieDetailView(movie: Movie) {
+        router?.navigateToMovieDetail(movie: movie)
+    }
 }
