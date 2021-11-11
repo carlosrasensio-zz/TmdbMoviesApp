@@ -2,9 +2,9 @@
 
 **APP INFORMATION**
 
-Architecture: MVVM
-Reactive programming: RXSwift/RxCocoa
-Service source: TMDB
+- Architecture: MVVM
+- Reactive programming: RXSwift/RxCocoa
+- Service source: TMDB
     - Get Popular: get a list of the current popular movies on TMDB. This list updates daily.
     - UIImageView extension to get image from service, using the image path from the movie information.
 
