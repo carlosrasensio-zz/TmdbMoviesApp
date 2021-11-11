@@ -8,7 +8,7 @@
     - Get Popular: get a list of the current popular movies on TMDB. This list updates daily.
     - UIImageView extension to get image from service, using the image path from the movie information.
 
-
+*Note:* add a TMDB apiKey to compile the project. Mine was removed for privacity.
 
 **POSSIBLE FUTURE IMPLEMENTATIONS**
 
