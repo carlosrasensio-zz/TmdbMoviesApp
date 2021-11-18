@@ -108,7 +108,7 @@ private extension MoviesListView {
 }
 
 // MARK: - TableView functions
-extension MoviesListView: UITableViewDelegate, UITableViewDataSource {
+extension MoviesListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" {
             return filteredMovies.count
@@ -139,7 +139,9 @@ extension MoviesListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+}
 
+extension MoviesListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchController.isActive && searchController.searchBar.text != "" {
             viewModel.createMovieDetailView(movie: filteredMovies[indexPath.row])
