@@ -12,7 +12,7 @@ struct Constants {
     
     struct NetworkManager {
         static let version = 3
-        static let apiKey = ""  // TODO: add TMDB apiKey
+        static let apiKey = "5d8bb741e4498fd5448bc0738a12eb52"  // TODO: add TMDB apiKey
 
         struct URLs {
             static let base = "https://api.themoviedb.org/\(Constants.NetworkManager.version)/"
