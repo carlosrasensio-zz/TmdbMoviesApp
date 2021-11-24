@@ -93,6 +93,7 @@ class MoviesListView: UIViewController {
 // MARK: - Get data from ViewModel with RxSwift
 private extension MoviesListView {
     func getMovies() {
+        self.activityIndicator.startAnimating()
         return viewModel.getMovies()
             .subscribe(on: MainScheduler.instance)
             .observe(on: MainScheduler.instance)
