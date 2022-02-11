@@ -102,6 +102,7 @@ private extension MoviesListView {
                 self.reloadTableView()
             } onError: { error in
                 print("\n[X] Error: \(error.localizedDescription)\n")
+                self.showAlert(title: "ERROR", message: error.localizedDescription)
             } onCompleted: {
             }
             .disposed(by: disposeBag)
@@ -157,6 +158,19 @@ extension MoviesListView: UISearchControllerDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchController.isActive = false
         reloadTableView()
+    }
+}
+
+private extension MoviesListView {
+    func showAlert(title: String, message : String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = .black
+        alert.view.alpha = 0.5
+        alert.view.layer.cornerRadius = 15
+        self.present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            alert.dismiss(animated: true)
+        }
     }
 }
 
