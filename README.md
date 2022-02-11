@@ -1,7 +1,3 @@
-<p align="center">
-<img src="/Users/crodrigueza/Workspace/carlosrasensio/TmdbMoviesApp/TmdbMoviesApp/TmdbMoviesApp/Resources/Assets.xcassets/TMDB.imageset/TMDB.jpeg" alt="TmdbMoviesApp" height="128" width="128">
-</p>
-
 <h1 align="center">TMDB Movies iOS App</h1>
 
 *Author:* Carlos Rodriguez Asensio
