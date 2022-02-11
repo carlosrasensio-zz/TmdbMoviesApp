@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct Movies: Codable {
+struct Movies: Codable, Equatable {
     let movies: [Movie]
 
     enum CodingKeys: String, CodingKey {
         case movies = "results"
     }
+
+    static func == (lhs: Movies, rhs: Movies) -> Bool {
+        return lhs.movies == rhs.movies
+    }
+
 }
